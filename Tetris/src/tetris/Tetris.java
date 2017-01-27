@@ -6,19 +6,22 @@
 package tetris;
 
 import java.awt.BorderLayout;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-    public class Tetris() {
+public class Tetris extends JFrame {
+
+    JLabel statusbar;
+
+    public Tetris() {
 
         statusbar = new JLabel(" 0");
         add(statusbar, BorderLayout.SOUTH);
-        Board board = new Board(this);
-        add(board);
-        board.start();
+        tableau tableau = new tableau(this);
+        add(tableau);
+        tableau.start();
 
         setSize(200, 400);
         setTitle("Tetris");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }
-
+   }
+    
