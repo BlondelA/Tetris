@@ -23,5 +23,12 @@ public class Tetris extends JFrame {
 
         setSize(200, 400);
         setTitle("Tetris");
-   }
+    }
     
+    
+    public JLabel getStatusBar() {
+        return statusbar;
+    }
+
+}
+
