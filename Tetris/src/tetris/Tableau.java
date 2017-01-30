@@ -203,7 +203,7 @@ public class Tableau extends JPanel implements ActionListener {
     }
 
 /**
- * Après le GO remettre tout à 0
+ * Supprimer quand ligne pleine
  */
     private void removeFullLines()
     {
@@ -242,14 +242,19 @@ public class Tableau extends JPanel implements ActionListener {
   */
     private void drawSquare(Graphics g, int x, int y, Tetrimos shape)
     {
-        Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102), 
-            new Color(102, 204, 102), new Color(102, 102, 204), 
-            new Color(204, 204, 102), new Color(204, 102, 204), 
-            new Color(102, 204, 204), new Color(218, 170, 0)
+        Color[] couleurs = { 
+            new Color(0, 0, 0),
+            new Color(255, 0, 0), 
+            new Color(0, 255, 0), 
+            new Color(0, 255, 255), 
+            new Color(255, 0, 255), 
+            new Color(255, 255, 0), 
+            new Color(255, 100, 0), 
+            new Color(0, 0, 255)
         };
 
 
-        Color color = colors[shape.ordinal()];
+        Color color = couleurs[shape.ordinal()];
 
         g.setColor(color);
         g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
