@@ -1,29 +1,33 @@
 /**
  * @author toto
- * Ici je m'occupe des Tetrominos: les pièces.
+ * ici les pièces
+ * 
  */
-
 package tetris;
 
-public class Tetromono {
-
-    enum Tetrolist { Vide, bare, cube, T, L, J, S, Z };
-
-    private Tetrolist pieceTetromino;
-    private int coord[][];
-    private int[][][] coordTable;
+import java.util.Random;
+import java.lang.Math;
 
 
-    public Tetromino() {
+public class Tetrimo {
 
-        coords = new int[4][2];
-        setShape(Tetrolist.Vide);
+    enum Tetrimos { Vide, bare, cube, T, L, J, S, Z };
+
+    private Tetrimos piece;
+    private int coordonne[][];
+    private int[][][] coordonneTable;
+
+
+    public Tetrimo() {
+
+        coordonne = new int[4][2];
+        setTetromino(Tetrimos.Vide);
 
     }
 
-    public void setTetromino(Tetrolist tetromino) {
+    public void setTetromino(Tetrimos Tetromino) {
 
-         coordTable = new int[][][] {
+         coordonneTable = new int[][][] {
             { { 0, 0 },   { 0, 0 },   { 0, 0 },   { 0, 0 } },
             { { 2, 0 },   { 1, 0 },   { 0, 0 },   { -1, 0 } },
             { { 0, -1 },   { 0, 0 },   { -1, -1 },   { -1, 0 } },
@@ -31,15 +35,16 @@ public class Tetromono {
             { { 1, -1 },   { 0, -1 },   { -1, -1 },   { -1, 0 } },
             { { 1, 0 },   { 0, 0 },   { -1, -1 },   { -1, 0 } },
             { { 0, -1 },   { 0, 0 },   { -1, 0 },   { -1, 1 } },
-            { { 0, -1 },   { 0, 0 },   { -1, -1 },   { 1, 0 } },
+            { { 0, -1 },   { 0, 0 },   { -1, -1 },   { 1, 0 } }
         };
 
         for (int i = 0; i < 4 ; i++) {
             for (int j = 0; j < 2; ++j) {
-                coord[i][j] = coordTable[tetromino.ordinal()][i][j];
+                coordonne[i][j] = coordonneTable[Tetromino.ordinal()][i][j];
             }
         }
-        pieceTetromino = tetromino;
+        piece = Tetromino;
 
     }
+
 }

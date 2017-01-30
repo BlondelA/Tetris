@@ -17,18 +17,25 @@ public class Tetris extends JFrame {
 
         statusbar = new JLabel(" 0");
         add(statusbar, BorderLayout.SOUTH);
-        tableau tableau = new tableau(this);
+        Tableau tableau = new Tableau(this);
         add(tableau);
         tableau.start();
 
         setSize(200, 400);
         setTitle("Tetris");
-    }
-    
-    
-    public JLabel getStatusBar() {
-        return statusbar;
-    }
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+   }
 
+   public JLabel getStatusBar() {
+       return statusbar;
+   }
+
+    public static void main(String[] args) {
+
+        Tetris game = new Tetris();
+        game.setLocationRelativeTo(null);
+        game.setVisible(true);
+
+    } 
 }
 
