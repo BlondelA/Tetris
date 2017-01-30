@@ -15,7 +15,7 @@ import java.lang.Math;
 
 public class Tetrimo {
 
-    enum Tetrimos { Vide, Z, S, Barre, T, J, L, Bloc };
+    enum Tetrimos { Vide, Z, S, Barre, T, Bloc, L, J };
 
     private Tetrimos pieceTetrimo;
     private int coords [][];
@@ -91,7 +91,7 @@ public class Tetrimo {
  */
     public Tetrimo rotateLeft() 
     {
-        if (pieceTetrimo == Tetrimos.J)
+        if (pieceTetrimo == Tetrimos.Bloc)
             return this;
 
         Tetrimo result = new Tetrimo();
@@ -106,7 +106,7 @@ public class Tetrimo {
 
     public Tetrimo rotateRight()
     {
-        if (pieceTetrimo == Tetrimos.J)
+        if (pieceTetrimo == Tetrimos.Bloc)
             return this;
 
         Tetrimo result = new Tetrimo();

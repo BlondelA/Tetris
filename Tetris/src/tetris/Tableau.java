@@ -83,7 +83,7 @@ public class Tableau extends JPanel implements ActionListener {
         clearBoard();
 
         newPiece();
-        timer.start();
+        timer.start();        
     }
 
     private void pause()
