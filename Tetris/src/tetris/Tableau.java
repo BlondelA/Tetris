@@ -95,7 +95,7 @@ public class Tableau extends JPanel implements ActionListener {
         isPaused = !isPaused;
         if (isPaused) {
             timer.stop();
-            statusbar.setText("paused");
+            statusbar.setText("PAUSE");
         } else {
             timer.start();
             statusbar.setText(String.valueOf(numLinesRemoved));
@@ -204,7 +204,7 @@ public class Tableau extends JPanel implements ActionListener {
     }
 
 /**
- * Supprimer quand ligne pleine et ajouter +1 au score
+ * Supprimer quand ligne pleine et +1 au score
  */
     private void removeFullLines()
     {
