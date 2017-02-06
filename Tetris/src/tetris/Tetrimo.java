@@ -1,5 +1,5 @@
 /**
- * @author toto
+ * @author BlondelA
  * ici les pièces
  * 
  */

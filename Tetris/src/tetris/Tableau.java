@@ -1,5 +1,5 @@
 /**
- * @author toto
+ * @author BlondelA
  * Et enfin l'affichage + Clavier (wallah je sais pas comment faire autrement que le mettre ici)
  * 
  */
@@ -181,7 +181,7 @@ public class Tableau extends JPanel implements ActionListener {
             curPiece.setPiece(Tetrimos.Vide);
             timer.stop();
             isStarted = false;
-            statusbar.setText("game over");
+            statusbar.setText("GAME OVER   RESTART= R");
         }
     }
 

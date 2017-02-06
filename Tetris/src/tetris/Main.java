@@ -1,5 +1,6 @@
 /**
- * @author toto
+/**
+ * @author BlondelA
  * Le Main du TETRIS
  * 
  */

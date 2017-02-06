@@ -1,5 +1,6 @@
 /*
- * 
+ * @author BlondelA
+ * Ici la musique
  */
 package Musique;
 
