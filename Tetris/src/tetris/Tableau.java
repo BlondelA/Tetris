@@ -42,7 +42,7 @@ public class Tableau extends JPanel implements ActionListener {
 
 
 
-    public Tableau(Tetris parent) {
+    public Tableau(Main parent) {
 
        setFocusable(true);
        curPiece = new Tetrimo();
@@ -80,7 +80,8 @@ public class Tableau extends JPanel implements ActionListener {
         isStarted = true;
         isFallingFinished = false;
         numLinesRemoved = 0;
-        clearBoard();
+        statusbar.setText("0");
+        clearBoard();  
 
         newPiece();
         timer.start();        
@@ -203,7 +204,7 @@ public class Tableau extends JPanel implements ActionListener {
     }
 
 /**
- * Supprimer quand ligne pleine
+ * Supprimer quand ligne pleine et ajouter +1 au score
  */
     private void removeFullLines()
     {
@@ -307,11 +308,11 @@ public class Tableau extends JPanel implements ActionListener {
              case KeyEvent.VK_SPACE:
                  dropDown();
                  break;
-             case 'd':
-                 oneLineDown();
+             case 'r':
+                 start();
                  break;
-             case 'D':
-                 oneLineDown();
+             case 'R':
+                 start();
                  break;
              }
 

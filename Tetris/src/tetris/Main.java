@@ -1,6 +1,6 @@
 /**
  * @author toto
- * Le "Main" du TETRIS
+ * Le Main du TETRIS
  * 
  */
 package tetris;
@@ -9,12 +9,12 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Tetris extends JFrame {
+public class Main extends JFrame {
 
     JLabel statusbar;
 
 
-    public Tetris() {
+    public Main() {
 
         statusbar = new JLabel(" 0");
         add(statusbar, BorderLayout.SOUTH);
@@ -33,7 +33,7 @@ public class Tetris extends JFrame {
 
     public static void main(String[] args) {
 
-        Tetris game = new Tetris();
+        Main game = new Main();
         game.setLocationRelativeTo(null);
         game.setVisible(true);
 
