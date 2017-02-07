@@ -68,15 +68,15 @@ public class Tableau extends JPanel implements ActionListener {
     }
 
 /**
-* Start, bouton pause, ect
+* Start, bouton pause
 */
     int squareWidth() { return (int) getSize().getWidth() / BoardWidth; }
     int squareHeight() { return (int) getSize().getHeight() / BoardHeight; }
     Tetrimos shapeAt(int x, int y) { return board[(y * BoardWidth) + x]; }
 
 
-    public void start()
-    {
+    public void start(){
+        
         if (isPaused)
             return;
 
@@ -93,8 +93,8 @@ public class Tableau extends JPanel implements ActionListener {
         musique.start();
     }
 
-    private void pause()
-    {
+    private void pause(){
+        
         if (!isStarted)
             return;
 
@@ -109,8 +109,8 @@ public class Tableau extends JPanel implements ActionListener {
         repaint();
     }
 
-    public void paint(Graphics g)
-    { 
+    public void paint(Graphics g){ 
+        
         super.paint(g);
 
         Dimension size = getSize();
@@ -137,8 +137,8 @@ public class Tableau extends JPanel implements ActionListener {
         }
     }
 
-    private void dropDown()
-    {
+    private void dropDown(){
+        
         int newY = curY;
         while (newY > 0) {
             if (!tryMove(curPiece, curX, newY - 1))
@@ -148,21 +148,21 @@ public class Tableau extends JPanel implements ActionListener {
         pieceDropped();
     }
 
-    private void oneLineDown()
-    {
+    private void oneLineDown(){
+        
         if (!tryMove(curPiece, curX, curY - 1))
             pieceDropped();
     }
 
 
-    private void clearBoard()
-    {
+    private void clearBoard(){
+        
         for (int i = 0; i < BoardHeight * BoardWidth; ++i)
             board[i] = Tetrimos.Vide;
     }
 
-    private void pieceDropped()
-    {
+    private void pieceDropped(){
+        
         for (int i = 0; i < 4; ++i) {
             int x = curX + curPiece.x(i);
             int y = curY - curPiece.y(i);
@@ -175,10 +175,10 @@ public class Tableau extends JPanel implements ActionListener {
             newPiece();
     }
 /**
- * Game over
+ * conditions du "Game over"
  */
-    private void newPiece()
-    {
+    private void newPiece(){
+        
         curPiece.setRandomShape();
         curX = BoardWidth / 2 + 1;
         curY = BoardHeight - 1 + curPiece.minY();
@@ -187,12 +187,15 @@ public class Tableau extends JPanel implements ActionListener {
             curPiece.setPiece(Tetrimos.Vide);
             timer.stop();
             isStarted = false;
-            statusbar.setText("GAME OVER   RESTART= R");
+            statusbar.setText("GAME OVER...");
         }
     }
-
-    private boolean tryMove(Tetrimo newPiece, int newX, int newY)
-    {
+    
+/**
+ * limite de déplacement des pièces
+ */
+    private boolean tryMove(Tetrimo newPiece, int newX, int newY){
+        
         for (int i = 0; i < 4; ++i) {
             int x = newX + newPiece.x(i);
             int y = newY - newPiece.y(i);
@@ -212,8 +215,8 @@ public class Tableau extends JPanel implements ActionListener {
 /**
  * Supprimer quand ligne pleine et +1 au score
  */
-    private void removeFullLines()
-    {
+    private void removeFullLines(){
+        
         int numFullLines = 0;
 
         for (int i = BoardHeight - 1; i >= 0; --i) {
@@ -247,8 +250,8 @@ public class Tableau extends JPanel implements ActionListener {
  /**
   * Couleurs des pièces
   */
-    private void drawSquare(Graphics g, int x, int y, Tetrimos shape)
-    {
+    private void drawSquare(Graphics g, int x, int y, Tetrimos shape){
+        
         Color[] couleurs = { 
             new Color(0, 0, 0),
             new Color(255, 0, 0), 

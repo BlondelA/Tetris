@@ -10,7 +10,7 @@ import java.lang.Math;
 
 /**
  * Je défini à quoi reçemblent chaques pièces en donnant leurs coordonées dans
- * un tableau de 4 x 2 
+ * un "tableau" de 4 x 2 
  */
 
 public class Tetrimo {
@@ -28,7 +28,7 @@ public class Tetrimo {
         setPiece(Tetrimos.Vide);
 
     }
-
+    
     public void setPiece(Tetrimos piece) {
 
          coordsTable = new int[][][] {
@@ -52,7 +52,7 @@ public class Tetrimo {
     }
 
 /**
- * Je donne ici les coordonnées de spawn puis spawn de manière random
+ * Coordonnées de spawn, spawn de manière random
  */   
     private void setX(int index, int x) { coords[index][0] = x; }
     private void setY(int index, int y) { coords[index][1] = y; }

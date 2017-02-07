@@ -39,7 +39,7 @@ public class Main extends JFrame {
         game.setLocationRelativeTo(null);
         game.setVisible(true);
     
-        music = new Musique("/resources/Tetris.wav");
+        music = new Musique("/Musiques/Tetris.wav");
     } 
     
     public static Musique music;
