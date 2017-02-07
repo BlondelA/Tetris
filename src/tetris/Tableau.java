@@ -55,8 +55,7 @@ public class Tableau extends JPanel implements ActionListener {
        addKeyListener(new TAdapter());
        clearBoard(); 
        
-       Thread musicPlay = new Thread(new Boucle());
-       musicPlay.start();
+       
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -90,6 +89,8 @@ public class Tableau extends JPanel implements ActionListener {
         newPiece();
         timer.start();
         
+        Thread musique = new Thread(new Boucle());
+        musique.start();
     }
 
     private void pause()
