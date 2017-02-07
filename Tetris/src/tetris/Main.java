@@ -9,6 +9,7 @@ package tetris;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import Musiques.Musique;
 
 public class Main extends JFrame {
 
@@ -37,6 +38,9 @@ public class Main extends JFrame {
         Main game = new Main();
         game.setLocationRelativeTo(null);
         game.setVisible(true);
-
+    
+        music = new Musique("/Musiques/Tetris.wav");
     } 
+    
+    public static Musique music;
 }

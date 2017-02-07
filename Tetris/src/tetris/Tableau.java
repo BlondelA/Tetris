@@ -17,10 +17,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import tetris.Tetrimo.Tetrimos;
+import Musiques.Boucle;
 
 
 /**
- * Je défini la taille du "tableau" (terrain)
+ * Je défini la taille du "tableau" (terrain) et le Timer du jeu
  */
 
 public class Tableau extends JPanel implements ActionListener {
@@ -52,7 +53,10 @@ public class Tableau extends JPanel implements ActionListener {
        statusbar =  parent.getStatusBar();
        board = new Tetrimos[BoardWidth * BoardHeight];
        addKeyListener(new TAdapter());
-       clearBoard();  
+       clearBoard(); 
+       
+       Thread musicPlay = new Thread(new Boucle());
+       musicPlay.start();
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -84,7 +88,8 @@ public class Tableau extends JPanel implements ActionListener {
         clearBoard();  
 
         newPiece();
-        timer.start();        
+        timer.start();
+        
     }
 
     private void pause()
