@@ -7,7 +7,7 @@ package Musiques;
 
 
 import javax.sound.sampled.Clip;
-import tetris.Main;
+import Jeu.Main;
 
 public class Boucle implements Runnable{
     
